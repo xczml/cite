@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фанбаза котиків і собачок</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showSection('home')">Фанбаза котиків і собачок</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <section id="home" class="section active">
+            <h1 class="text-center mb-4">Ласкаво просимо до світу наших пухнастих друзів!</h1>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/400px-Cat03.jpg" class="card-img-top" alt="Милий котик">
+                        <div class="card-body">
+                            <h5 class="card-title">Котики</h5>
+                            <p class="card-text">Дізнайтеся більше про наших чарівних котиків!</p>
+                            <button class="btn btn-primary" onclick="showSection('cats')">Дізнатися більше</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Puppy_on_Halong_Bay.jpg/400px-Puppy_on_Halong_Bay.jpg" class="card-img-top" alt="Веселий песик">
+                        <div class="card-body">
+                            <h5 class="card-title">Собачки</h5>
+                            <p class="card-text">Відкрийте для себе світ вірних собачих друзів!</p>
+                            <button class="btn btn-primary" onclick="showSection('dogs')">Дізнатися більше</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="mt-5 mb-4">Меми про котиків і собачок</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/500px-Cat03.jpg" class="card-img-top" alt="Кумедний котик">
+                        <div class="card-body">
+                            <p class="card-text">Коли кіт вирішує, що 3 година ночі - ідеальний час для гри</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Puppy_on_Halong_Bay.jpg/500px-Puppy_on_Halong_Bay.jpg" class="card-img-top" alt="Кумедний песик">
+                        <div class="card-body">
+                            <p class="card-text">Реакція собаки на слово "прогулянка"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cats" class="section">
+            <h2 class="mb-4">Все про котиків</h2>
+            <p>Котики - це неймовірні створіння, які приносять радість та комфорт у наші домівки. Вони граціозні, незалежні та дуже милі.</p>
+            
+            <h3 class="mt-4 mb-3">Цікаві факти про котів</h3>
+            <ul class="list-group mb-4">
+                <li class="list-group-item">Коти проводять 70% свого життя сплячи.</li>
+                <li class="list-group-item">Коти можуть чути ультразвук.</li>
+                <li class="list-group-item">Нявкання котів призначене спеціально для спілкування з людьми.</li>
+            </ul>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/600px-Cat03.jpg" alt="Милий котик" class="img-fluid rounded mb-4">
+            <button class="btn btn-primary" onclick="showSection('home')">Назад на головну</button>
+        </section>
+
+        <section id="dogs" class="section">
+            <h2 class="mb-4">Все про собачок</h2>
+            <p>Собаки відомі своєю відданістю, любов'ю та здатністю розуміти людські емоції. Вони завжди готові підтримати свого господаря.</p>
+            
+            <h3 class="mt-4 mb-3">Цікаві факти про собак</h3>
+            <ul class="list-group mb-4">
+                <li class="list-group-item">Собаки можуть розуміти до 250 слів та жестів.</li>
+                <li class="list-group-item">Унікальний відбиток носа собаки схожий на людський відбиток пальця.</li>
+                <li class="list-group-item">Собаки потіють через подушечки лап.</li>
+            </ul>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Puppy_on_Halong_Bay.jpg/600px-Puppy_on_Halong_Bay.jpg" alt="Веселий песик" class="img-fluid rounded mb-4">
+            <button class="btn btn-primary" onclick="showSection('home')">Назад на головну</button>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(function(section) {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            history.pushState({section: sectionId}, '', '#' + sectionId);
+        }
+
+        window.onpopstate = function(event) {
+            if (event.state && event.state.section) {
+                showSection(event.state.section);
+            } else {
+                showSection('home');
+            }
+        };
+
+        window.onload = function() {
+            var hash = window.location.hash.substr(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        };
+    </script>
+</body>
+</html>
